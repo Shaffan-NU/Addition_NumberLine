@@ -26,6 +26,8 @@ const NumberLineMove = (props) => {
     const [fishLeft, setFishLeft] = React.useState(0)
     const [fishTop, setFishTop] = React.useState(0)
     const [usedClicks, setUsedClicks] = React.useState(0)
+    const [usedClicksTen_s, setUsedClicksTen_s] = React.useState(0)
+
     const [fishFacePosition, setFishFacePosition] = React.useState()
     const numberLineRef = React.useRef();
     const buttonBackward = React.useRef();
@@ -70,9 +72,7 @@ const NumberLineMove = (props) => {
         <div style={{ marginTop: "10vh", marginBottom: "25vh" }}>
             <div style={{ display: "flex" }} >
                 <div >
-
                     <img src={less} alt="less" onClick={moveBackward} style={{ maxWidth: "50px", width: "100%" }} ref={buttonBackward} />
-
                 </div>
                 <div >
                     <img src={more} alt="more" onClick={moveForward} style={{ maxWidth: "50px", width: "100%" }} ref={buttonForward} />
