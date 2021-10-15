@@ -9,6 +9,7 @@ import Drop from "./drag.jsx";
 import DifficultDrag from "./DifficultDrag";
 import "animate.css"
 import Hints from "./Hints";
+import NumberLineMove from './NumberLineMove.jsx'
 class Quiz extends React.Component {
   _isMounted = false;
   _secondsIntervalRef;
@@ -24,7 +25,7 @@ class Quiz extends React.Component {
     images: [bowl, rooster],
     randomImage: "",
     data: [],
-    totalProblems : 1
+    totalProblems: 1
   };
 
   earnLife = () => {
@@ -71,8 +72,8 @@ class Quiz extends React.Component {
   componentWillUnmount() {
     this._isMounted = false;
   }
-  componentDidUpdate(){
-    if(this.state.totalProblems > sessionData.limit){
+  componentDidUpdate() {
+    if (this.state.totalProblems > sessionData.limit) {
       this.props.onEndGame(this.state.points)
     }
   }
@@ -93,7 +94,7 @@ class Quiz extends React.Component {
         this.setState({
           modalShowing: false,
           answer: 0,
-          totalProblems : this.state.totalProblems + 1
+          totalProblems: this.state.totalProblems + 1
         });
       if (this.props.lifes > 0) (this.answerInput && this.answerInput.focus());
     }, 2500);
@@ -190,7 +191,7 @@ class Quiz extends React.Component {
                       </tr>
                     </tbody>
                   </table> */}
-                  <div className="objectRow" style={{ width: "100%" }}>
+                  {/* <div className="objectRow" style={{ width: "100%" }}>
                     <div className="objectLeft">
                       {[...Array(parseInt(this.state.firstNumber))].map((e, i) => {
                         return <img key={i} src={this.state.randomImage} className="questionImage " draggable="false" />
@@ -202,9 +203,11 @@ class Quiz extends React.Component {
                         return <img key={i} src={this.state.randomImage} className="questionImage " draggable="false" />
                       })}
                     </div>
-                  </div>
+                  </div> */}
+                  <h1 style={{ fontSize: "3.5em" }}> {this.state.problem} </h1>
+                  <NumberLineMove incCount={(number) => { this.setState({ answer: this.state.answer + number }) }} decCount={(number) => { this.setState({ answer: this.state.answer - number }) }} count={this.state.answer} />
+                  {/* <Drop incCount={(number) => { this.setState({ answer: this.state.answer + number }) }} decCount={(number) => { this.setState({ answer: this.state.answer - number }) }} count={this.state.answer} img={this.state.randomImage} /> */}
 
-                  <Drop incCount={(number) => { this.setState({ answer: this.state.answer + number }) }} decCount={(number) => { this.setState({ answer: this.state.answer - number }) }} count={this.state.answer} img={this.state.randomImage} />
                 </div>
               }
               {/* <input
