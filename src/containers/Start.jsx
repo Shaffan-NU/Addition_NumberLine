@@ -19,6 +19,7 @@ class Start extends React.Component {
 
     clicked = () => {
         Session.set("onlinePlayer", this.state.player)
+        this.state.startGameSound.pause()
         this.state.countDownSound.play()
 
         this.props.startPressed();

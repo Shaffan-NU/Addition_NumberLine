@@ -169,16 +169,9 @@ class Quiz extends React.Component {
             this.state.modal
           ) : (
             <div>
-              {sessionData.dif != "b" ?
-                <div>
-                  {/* <section>
-                    <blockquote class="electric bubble">Autobots,<span>Attack!</span></blockquote>
-                  </section> */}
-                  <h1 style={{ fontSize: "3.5em" }}> {this.state.problem} </h1>
-                  <DifficultDrag incCount={(number) => { this.setState({ answer: this.state.answer + number }) }} decCount={(number) => { this.setState({ answer: this.state.answer - number }) }} count={this.state.answer} img={this.state.randomImage} />
-                </div> :
-                <div>
-                  {/* <table align="center">
+
+              <div>
+                {/* <table align="center">
                     <tbody>
                       <tr >
                         {[...Array(parseInt(this.state.firstNumber))].map((e, i) => {
@@ -191,7 +184,7 @@ class Quiz extends React.Component {
                       </tr>
                     </tbody>
                   </table> */}
-                  {/* <div className="objectRow" style={{ width: "100%" }}>
+                {/* <div className="objectRow" style={{ width: "100%" }}>
                     <div className="objectLeft">
                       {[...Array(parseInt(this.state.firstNumber))].map((e, i) => {
                         return <img key={i} src={this.state.randomImage} className="questionImage " draggable="false" />
@@ -204,12 +197,12 @@ class Quiz extends React.Component {
                       })}
                     </div>
                   </div> */}
-                  <h1 style={{ fontSize: "3.5em" }}> {this.state.problem} </h1>
-                  <NumberLineMove incCount={(number) => { this.setState({ answer: this.state.answer + number }) }} decCount={(number) => { this.setState({ answer: this.state.answer - number }) }} count={this.state.answer} />
-                  {/* <Drop incCount={(number) => { this.setState({ answer: this.state.answer + number }) }} decCount={(number) => { this.setState({ answer: this.state.answer - number }) }} count={this.state.answer} img={this.state.randomImage} /> */}
+                <h1 style={{ fontSize: "3.5em" }}> {this.state.problem} </h1>
+                <NumberLineMove incCount={(number) => { this.setState({ answer: this.state.answer + number }) }} decCount={(number) => { this.setState({ answer: this.state.answer - number }) }} count={this.state.answer} />
+                {/* <Drop incCount={(number) => { this.setState({ answer: this.state.answer + number }) }} decCount={(number) => { this.setState({ answer: this.state.answer - number }) }} count={this.state.answer} img={this.state.randomImage} /> */}
 
-                </div>
-              }
+              </div>
+
               {/* <input
                 ref={input => {
                   this.answerInput = input;

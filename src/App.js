@@ -10,6 +10,7 @@ import backgroundGIF2 from './assets/gif/background2.gif'
 import Footer from './components/Footer';
 import sessionData from './utils/sessionData';
 import grocerySound from './assets/sounds/grocerySound.mp3'
+import Hints from './components/Hints';
 import on from './assets/sound.png'
 import off from './assets/mute.png'
 import {
@@ -36,7 +37,7 @@ class App extends Component {
 
     // alert(id)
   }
-  componentDidMount(){
+  componentDidMount() {
     this.state.sound.play()
   }
   handleSoundClick = () => {
@@ -57,10 +58,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {sessionData.dif == "b" ? <img src={backgroundGIF} id="bg" alt="" /> : <img src={backgroundGIF2} id="bg" alt="" />}
+          {sessionData.dif == "b" ? <img src={backgroundGIF} id="bg" alt="" /> : <img src={backgroundGIF} id="bg" alt="" />}
           <div >
-            <img alt="mute" src={this.state.img} style={{ position: "fixed", top: "20px", left: "20px", maxWidth: "40px", width: "100%", zIndex: 4 }} onClick={this.handleSoundClick} />
+            <img alt="mute" src={this.state.img} style={{ position: "absolute", top: "20px", left: "20px", maxWidth: "40px", width: "100%", zIndex: 4 }} onClick={this.handleSoundClick} />
           </div>
+          
           {
             !this.props.isStarted ? (
               <Start startPressed={this.gameStart} />

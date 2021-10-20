@@ -72,12 +72,12 @@ const getRandomNumber = range => {
         eq = ((Math.random() * (range - min)) + 1 ).toFixed()
     }
     else if( sessionData.dif == "i"){
-        range = 20
+        range = 30
         min = 10
         eq = ((Math.random() * (range - min)) + min ).toFixed()
     }
     else if (sessionData.dif == "m"){
-        range = 30
+        range = 50
         min = 15
         eq = ((Math.random() * (range - min)) + min ).toFixed()
     }

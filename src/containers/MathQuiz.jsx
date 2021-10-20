@@ -37,7 +37,7 @@ class MathQuiz extends React.Component {
               <Timmer {...this.props} />
               <Lifes {...this.props} />
               <Points {...this.props} />
-              
+              <Hints />
             </div>
             <div>
               <Quiz {...this.props} />
@@ -48,7 +48,7 @@ class MathQuiz extends React.Component {
     ) : (
       <Done {...this.props} retryGame={this.retryGame} >
         <TableScore {...this.props} />
-        
+
       </ Done>
     );
   }
