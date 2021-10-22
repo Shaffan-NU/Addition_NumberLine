@@ -5,7 +5,6 @@ import Start from './containers/Start';
 import MathQuiz from './containers/MathQuiz';
 import './App.css';
 import backgroundGIF from './assets/gif/background.gif'
-import backgroundGIF2 from './assets/gif/background2.gif'
 
 import Footer from './components/Footer';
 import sessionData from './utils/sessionData';

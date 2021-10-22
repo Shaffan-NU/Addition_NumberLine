@@ -39,7 +39,7 @@ const NumberLineMove = (props) => {
     const isBasic = sessionData.dif == "b" ? true : false
     const [currentSoundNumber, setCurrentSoundNumber] = React.useState(0);
     const isIntermediate = sessionData.dif == "i" ? true : false
-
+    let a = 5
     const [sounds] = React.useState([
         new Audio(_1),
         new Audio(_2),
@@ -53,14 +53,14 @@ const NumberLineMove = (props) => {
         new Audio(_10),
 
     ]);
+
     var fishStyle = {
         move: {
             position: "relative",
             float: "left",
             left: fishLeft + "px",
             top: fishTop + "px",
-            width: "100%",
-            maxWidth: "70px"
+
         }
     }
     var fishTwoStyle = {
@@ -69,16 +69,40 @@ const NumberLineMove = (props) => {
             float: "left",
             left: fishTwoLeft + "px",
             top: fishTop + "px",
-            width: "100%",
-            maxWidth: "70px"
+
+
         }
     }
+    const checkResizeFish1 = () => {
+        const nextForwardStep = numberLineRef.current.offsetWidth / 11
+
+        setFishLeft(usedClicks * nextForwardStep)
+    };
+    const checkResizeFish2 = () => {
+        const nextForwardStep = numberLineTwoRef.current.offsetWidth / 11
+
+        setFishTwoLeft(usedClicksTen_s * nextForwardStep)
+    };
     useEffect(() => {
         setFishFacePosition(movingFish_R)
         setFishLeft(numberLineRef.current.offsetLeft)
         setFishTop(0)
     }, [])
 
+    useEffect(() => {
+        window.addEventListener("resize", checkResizeFish1);
+        return () => {
+            window.removeEventListener("resize", checkResizeFish1)
+        }
+    }, [usedClicks])
+    if (sessionData.dif != "b") {
+        useEffect(() => {
+            window.addEventListener("resize", checkResizeFish2);
+            return () => {
+                window.removeEventListener("resize", checkResizeFish2)
+            }
+        }, [usedClicksTen_s])
+    }
     const moveForward = () => {
         if (usedClicks < 10) {
             const nextForwardStep = numberLineRef.current.offsetWidth / 11
@@ -125,34 +149,36 @@ const NumberLineMove = (props) => {
     }
 
     return (
-        <div style={{ marginTop: "10vh", marginBottom: "25vh" }}>
-            <div style={{ display: "flex" }} >
-                <div >
-                    <img src={less} alt="less" onClick={moveBackward} style={{ maxWidth: "50px", width: "100%" }} ref={buttonBackward} />
-                </div>
-                <div >
-                    <img src={more} alt="more" onClick={moveForward} style={{ maxWidth: "50px", width: "100%" }} ref={buttonForward} />
-                </div>
-                <div className="parentImage" >
-                    <img src={fishFacePosition} alt="movingFish" style={fishStyle.move} />
-                    <img src={numberLine} className="NumberLine" alt="numberLine" name="numberLine" style={{ maxWidth: "1000px", width: "100%" }} ref={numberLineRef} />
-                </div>
-            </div>
-
-            {!isBasic &&
-                <div style={{ display: "flex" }} >
+        <div style={{ position: "relative" }}>
+            <div className="nline" style={{ marginTop: "10vh", marginBottom: "25vh", display: "flex" }}>
+                <div style={{ display: "flex", marginLeft: "20px", marginRight: "20px" }} >
                     <div >
-                        <img src={less} alt="less" onClick={moveBackwardFish2} style={{ maxWidth: "50px", width: "100%" }} ref={buttonBackward} />
+                        <img src={less} alt="less" onClick={moveBackward} style={{ maxWidth: "50px", width: "100%" }} ref={buttonBackward} />
                     </div>
                     <div >
-                        <img src={more} alt="more" onClick={moveForwardFish2} style={{ maxWidth: "50px", width: "100%" }} ref={buttonForward} />
+                        <img src={more} alt="more" onClick={moveForward} style={{ maxWidth: "50px", width: "100%" }} ref={buttonForward} />
                     </div>
                     <div className="parentImage" >
-                        <img src={fishFacePosition} name="fish" alt="movingFish" style={fishTwoStyle.move} />
-                        <img src={numberLineTwo} className="NumberLine" alt="numberLine" name="numberLine" style={{ maxWidth: "1000px", width: "100%" }} ref={numberLineTwoRef} />
+                        <img src={fishFacePosition} className="fish" alt="movingFish" style={fishStyle.move} />
+                        <img src={numberLine} className="NumberLine" alt="numberLine" name="numberLine" style={{ maxWidth: "1000px", width: "100%" }} ref={numberLineRef} />
                     </div>
                 </div>
-            }
+
+                {!isBasic &&
+                    <div style={{ display: "flex", marginLeft: "20px", marginRight: "30px" }} >
+                        <div >
+                            <img src={less} alt="less" onClick={moveBackwardFish2} style={{ maxWidth: "50px", width: "100%" }} ref={buttonBackward} />
+                        </div>
+                        <div >
+                            <img src={more} alt="more" onClick={moveForwardFish2} style={{ maxWidth: "50px", width: "100%" }} ref={buttonForward} />
+                        </div>
+                        <div className="parentImage" >
+                            <img src={fishFacePosition} className="fish" name="fish" alt="movingFish" style={fishTwoStyle.move} />
+                            <img src={numberLineTwo} className="NumberLine" alt="numberLine" name="numberLine" style={{ maxWidth: "1000px", width: "100%" }} ref={numberLineTwoRef} />
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     );
 };

@@ -1,14 +1,9 @@
 import React from "react";
 import AnswerModal from "./AnswerModal";
 import { MathHelper } from "../utils";
-import bowl from "../assets/bowl.png"
-import rooster from "../assets/rooster.png"
 import './Quiz.css'
 import sessionData from "../utils/sessionData.js"
-import Drop from "./drag.jsx";
-import DifficultDrag from "./DifficultDrag";
 import "animate.css"
-import Hints from "./Hints";
 import NumberLineMove from './NumberLineMove.jsx'
 class Quiz extends React.Component {
   _isMounted = false;
@@ -22,7 +17,6 @@ class Quiz extends React.Component {
     modal: "",
     modalShowing: false,
     streaks: 0,
-    images: [bowl, rooster],
     randomImage: "",
     data: [],
     totalProblems: 1
@@ -134,14 +128,12 @@ class Quiz extends React.Component {
   getProblem = () => {
     // const newProblemSet = MathHelper.generateAdditionProblem(this.props.points);
     const newProblemSet = MathHelper.generateAdditionProblem(this.props.points);
-    const randomImage = this.getImage()
     this._isMounted &&
       this.setState({
         problem: newProblemSet.problem,
         firstNumber: newProblemSet.firstNumber,
         secondNumber: newProblemSet.secondNumber,
         symbol: newProblemSet.symbol,
-        randomImage: randomImage,
       });
   };
   populateHover = () => {
@@ -152,9 +144,7 @@ class Quiz extends React.Component {
     this.setState({ hover: arrayHover })
   }
 
-  getImage = () => {
-    return this.state.images[MathHelper.getRandomInt(0, this.state.images.length - 1)]
-  }
+ 
 
   render() {
     // const images = [...Array(parseInt(this.state.firstNumber))].map((e, i) => {

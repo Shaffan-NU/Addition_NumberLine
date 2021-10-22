@@ -38,15 +38,17 @@ class Hints extends React.Component {
                 <i onClick={() => { this.toggleHint(!this.state.showHint) }} className="fas fa-info"></i>
                 <div >
                     {this.state.showHint &&
-                        <div class="thought " onClick={() => { this.toggleHint(!this.state.showHint) }} style={{ top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0,0,0,0.9)", color: "red" }}>
+                        <div class="thought " onClick={() => { this.toggleHint(!this.state.showHint) }} style={{ top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0,0,0,0.9)", color: "red", zIndex:5 }}>
                             <img src={instructionGIF} style={{
                                 top: 0,
                                 left: 0,
                                 right: 0,
                                 bottom: 0,
                                 margin: "auto",
-                                maxWidth: "1000px",
-                                width: "100%",
+                                maxWidth: "800px",
+                                width: "80%",
+                                maxHeight : "400px",
+                                height : "80%",
                                 position: "absolute"
                             }} />
                         </div>}
