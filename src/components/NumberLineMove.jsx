@@ -150,7 +150,7 @@ const NumberLineMove = (props) => {
 
     return (
         <div style={{ position: "relative" }}>
-            <div className="nline" style={{ marginTop: "10vh", marginBottom: "25vh", display: "flex" }}>
+            <div className="nline" style={{ marginTop: "10vh", marginBottom: "25vh"}}>
                 <div style={{ display: "flex", marginLeft: "20px", marginRight: "20px" }} >
                     <div >
                         <img src={less} alt="less" onClick={moveBackward} style={{ maxWidth: "50px", width: "100%" }} ref={buttonBackward} />
