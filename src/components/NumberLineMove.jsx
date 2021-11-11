@@ -150,8 +150,8 @@ const NumberLineMove = (props) => {
 
     return (
         <div style={{ position: "relative" }}>
-            <div className="nline" style={{ marginTop: "10vh", marginBottom: "25vh"}}>
-                <div style={{ display: "flex", marginLeft: "20px", marginRight: "20px" }} >
+            <div className="nline" >
+                <div className="firstBar"  >
                     <div >
                         <img src={less} alt="less" onClick={moveBackward} style={{ maxWidth: "50px", width: "100%" }} ref={buttonBackward} />
                     </div>
@@ -160,12 +160,12 @@ const NumberLineMove = (props) => {
                     </div>
                     <div className="parentImage" >
                         <img src={fishFacePosition} className="fish" alt="movingFish" style={fishStyle.move} />
-                        <img src={numberLine} className="NumberLine" alt="numberLine" name="numberLine" style={{ maxWidth: "1000px", width: "100%" }} ref={numberLineRef} />
+                        <img src={numberLine} className="NumberLine" alt="numberLine" name="numberLine" ref={numberLineRef} /> 
                     </div>
                 </div>
 
                 {!isBasic &&
-                    <div style={{ display: "flex", marginLeft: "20px", marginRight: "30px" }} >
+                    <div  className="secondBar"  >
                         <div >
                             <img src={less} alt="less" onClick={moveBackwardFish2} style={{ maxWidth: "50px", width: "100%" }} ref={buttonBackward} />
                         </div>
@@ -174,7 +174,7 @@ const NumberLineMove = (props) => {
                         </div>
                         <div className="parentImage" >
                             <img src={fishFacePosition} className="fish" name="fish" alt="movingFish" style={fishTwoStyle.move} />
-                            <img src={numberLineTwo} className="NumberLine" alt="numberLine" name="numberLine" style={{ maxWidth: "1000px", width: "100%" }} ref={numberLineTwoRef} />
+                            <img src={numberLineTwo} className="NumberLine" alt="numberLine" name="numberLine"  ref={numberLineTwoRef} />
                         </div>
                     </div>
                 }
