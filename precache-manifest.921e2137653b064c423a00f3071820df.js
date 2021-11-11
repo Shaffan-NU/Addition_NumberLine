@@ -1,27 +1,31 @@
 self.__precacheManifest = [
   {
-    "revision": "16a1f49cb3f4b20c3442",
-    "url": "/Addition_NumberLine/static/css/main.ae4203cf.chunk.css"
+    "revision": "af4775b52be0582047bf",
+    "url": "/Addition_NumberLine/static/css/main.0f5aa26c.chunk.css"
   },
   {
-    "revision": "16a1f49cb3f4b20c3442",
-    "url": "/Addition_NumberLine/static/js/main.741c1dcf.chunk.js"
+    "revision": "af4775b52be0582047bf",
+    "url": "/Addition_NumberLine/static/js/main.b6ea1a25.chunk.js"
   },
   {
     "revision": "50781c86b46beea0a4b1",
     "url": "/Addition_NumberLine/static/js/runtime~main.6aca6987.js"
   },
   {
-    "revision": "2c40788e567474ce83ca",
+    "revision": "567c0d460be3173795d5",
     "url": "/Addition_NumberLine/static/css/2.a44f8451.chunk.css"
   },
   {
-    "revision": "2c40788e567474ce83ca",
-    "url": "/Addition_NumberLine/static/js/2.b6bb1398.chunk.js"
+    "revision": "567c0d460be3173795d5",
+    "url": "/Addition_NumberLine/static/js/2.dd886786.chunk.js"
   },
   {
     "revision": "212c4bcb95a3ce810e745bff36eb4bf4",
     "url": "/Addition_NumberLine/static/media/movingFishR.212c4bcb.gif"
+  },
+  {
+    "revision": "a0d6b13874a29393b0f8252f2adb5fa7",
+    "url": "/Addition_NumberLine/static/media/grocerySound.a0d6b138.mp3"
   },
   {
     "revision": "48d2eef01cecd55520ff1bf10c3e3748",
@@ -38,10 +42,6 @@ self.__precacheManifest = [
   {
     "revision": "5f1c11259cb15bc3800a9bb43a4a7242",
     "url": "/Addition_NumberLine/static/media/background.5f1c1125.gif"
-  },
-  {
-    "revision": "7360a269fa89ec8922a9fb9354820523",
-    "url": "/Addition_NumberLine/static/media/sound.7360a269.png"
   },
   {
     "revision": "424d18986561c7039221eb97a66aef6b",
@@ -112,15 +112,7 @@ self.__precacheManifest = [
     "url": "/Addition_NumberLine/static/media/instructions.59843b2d.gif"
   },
   {
-    "revision": "a0d6b13874a29393b0f8252f2adb5fa7",
-    "url": "/Addition_NumberLine/static/media/grocerySound.a0d6b138.mp3"
-  },
-  {
-    "revision": "f02ac89a44b28acd80cb6b0399adbf8f",
-    "url": "/Addition_NumberLine/static/media/mute.f02ac89a.png"
-  },
-  {
-    "revision": "0014cbf9067d68ad5e13ea18260848b6",
+    "revision": "0b2ff139aa99fb91141a5fc4ce253d43",
     "url": "/Addition_NumberLine/index.html"
   }
 ];
